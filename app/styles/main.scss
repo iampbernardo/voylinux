@@ -3,46 +3,108 @@
 
 html,
 body {
+  background-color: white;
   height: 100%;
+  @media screen and (max-width: 600px) {
+    font-size: 11px;
+  }
+  @media screen and (min-width: 601px) and (max-width: 790) {
+    font-size: 16px;
+  }
 }
 
 body {
-  background-image: url(../images/headphones.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   color: #333;
   font-family: 'Open Sans', sans-serif;
 }
 
-section {
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 100%;
+.header {
+  background-image: url(../images/headphones.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 65%;
   position: relative;
   box-sizing: border-box;
-  .main-content {
+  .header__band {
+    background-color: rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
-    position: absolute;
     color: white;
     text-align: center;
-    padding: 60px;
+    height: 100%;
     width: 100%;
-    top: 25%;
+    @media screen and (max-width: 560px) {
+      padding: 50% 60px 60px 60px;
+    }
+    @media screen and (min-width: 601px) and (max-width: 790px) {
+      padding: 50% 60px 60px 60px;
+    }
+    @media screen and (min-width: 790px) {
+      padding: 15% 60px 60px 60px;
+    }
     h1 {
       margin-top: 0;
       color: white;
       font-size: 2.3rem;
-      font-weight: normal;
+      font-weight: 400;
       em {
         font-style: normal;
         padding: 0 .2em;
-        background-color: #42a5f5;
+        animation-name: pulse;
+        animation-duration: 7s;
+        animation-timing-function: ease-out;
+        animation-delay: 3s;
+        animation-direction: alternate;
+        animation-fill-mode: none;
+        animation-play-state: running;
+
+        @keyframes pulse {
+          25% {
+            background-color: #ff2052;
+          }
+          50% {
+            background-color: #ffcb00;
+          }
+          75% {
+            background-color: #e66000;
+          }
+
+        }
       }
     }
     h2 {
-      font-weight: 200;
+      color: #42a5f5;
+      font-weight: 300;
       font-size: 1.2em;
     }
   }
+}
 
+footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+  nav {
+    width: auto;
+    ul {
+      padding-left: 0;
+      list-style: none;
+      display: block;
+      li {
+        display: inline-block;
+        &:not(:first-child) {
+          margin-left: 1em;
+        }
+        a {
+          color: #555;
+          font-size: 2.5em;
+          &:hover {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
 }
