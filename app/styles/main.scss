@@ -1,31 +1,48 @@
 // bower:scss
 // endbower
 
+html,
 body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  background-image: url(../images/headphones.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   color: #333;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+section {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  .main-content {
+    box-sizing: border-box;
+    position: absolute;
+    color: white;
+    text-align: center;
+    padding: 60px;
+    width: 100%;
+    top: 25%;
+    h1 {
+      margin-top: 0;
+      color: white;
+      font-size: 2.3rem;
+      font-weight: normal;
+      em {
+        font-style: normal;
+        padding: 0 .2em;
+        background-color: #42a5f5;
+      }
+    }
+    h2 {
+      font-weight: 200;
+      font-size: 1.2em;
+    }
   }
-}
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
 }
